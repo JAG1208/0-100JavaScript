@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Master chef c Argentina :huevo_frito:</h1>
+    <script>
+        const PI = Math.PI;
+        const NOTA_ACEPTABLE = 6;
+        const NOTA_DESTACADA = 8;
+        const participantes = new Array(); // nombres de los participantes
+        const notas = []; // notas de los participantes
+        const posiblesFinalistas = [];
+        let participantesAceptables = 0;
+        const numeroPartipantes = parseInt(
+            prompt("Cuantos participantes juegan?")
+        );
+        for (let i = 0; i < numeroPartipantes; i++) {
+            participantes.push(prompt("ingrese el nombre"));
+            notas.push(
+                parseInt(prompt("Como valoras a este cocinero/a del 1 al 10"))
+            );
+            notas[i] >= NOTA_ACEPTABLE && notas[i] < NOTA_DESTACADA ?
+                participantesAceptables++
+                :
+                false;
+            notas[i] > NOTA_DESTACADA ?
+                posiblesFinalistas.push(participantes[i]) :
+                false;
+        }
+        // 0.6 * 3 -> parseInt(1.8)  -> 1
+        const random = parseInt(Math.random() * posiblesFinalistas.length);
+        document.write(
+            `Un posible finalista :huevo_frito: es ${
+          posiblesFinalistas[random] || "no hay finalistas :O"
+        }`
+        );
+        document.write(
+            `Los mejores de MC son: ${
+          posiblesFinalistas.join("- ") || "son todos perdedores"
+        }`
+        );
+    </script>
+</body>
+
+</html>

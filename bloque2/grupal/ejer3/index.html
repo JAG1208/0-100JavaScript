@@ -1,0 +1,27 @@
+<!--Crear un vector de 4 posiciones con números aleatorios entre 1 y 500 (recordar que
+para generar números aleatorios en javascript se usa la función
+Math.round(Math.random()) . Luego, sumar los últimos dos valores y mostrarlos en
+consola.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const random = [];
+        for (let i = 0; i < 4; i++) {
+            random[i] = Math.round((Math.random() * 500) + 1);
+        }
+        let suma = random[random.length - 1] + random[random.length - 2];
+        console.log(suma);
+        console.log(random);
+    </script>
+</body>
+
+</html>

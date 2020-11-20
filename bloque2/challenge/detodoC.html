@@ -1,0 +1,32 @@
+<!--Crear un script que permita al usuario ingresar un número y muestre la tabla de multiplicar y la suma de los mismos. (Ejemplo: El usuario ingresa el numero 4)
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge [DeTodo]C</title>
+</head>
+
+<body>
+    <script>
+        const num = parseInt(prompt("ingresar numero entero"));
+        let arrayn = [];
+
+        let sum = 0;
+        let producto = 0;
+        for (let i = 0; i < 11; i++) {
+            producto = num * i;
+            document.write(`${num} x ${i}=${producto} <br>`);
+            arrayn.push(producto);
+
+            sum = sum + producto;
+
+        }
+        document.write(`${arrayn.join("+")} = ${sum} <br>`);
+        document.write(`la suma es : ${sum}`);
+    </script>
+</body>
+
+</html>

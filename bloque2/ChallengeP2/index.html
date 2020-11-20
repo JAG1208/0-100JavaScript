@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>CHALLENGES P2</title>
+    <script src="funciones.js"></script>
+</head>
+
+<body>
+    <!-- [BigThreeReloaded] 
+        Confeccionar una función a la cual le envíe tres enteros y
+        retorne el mayor de ellos.
+    <script>
+        let mayor = 0;
+        mayor = bigThree(7, 3, 4);
+        document.write(`EL numero mayor es: ${mayor}`)
+    </script
+    -->
+    <!-- [AVGReloaded] Elaborar una función que reciba tres enteros y retorne el promedio.
+<script>
+        let prom = promedio(2, 3, 7);
+        document.write(`el promedio de los 3 numeros es: ${prom}`);
+    </script>
+    -->
+    <!--[Plusx5] Confeccionar una función que solicite la carga de 5 valores por teclado y
+    retorne su suma.
+    
+    <script>
+        const suma = cargaNumero();
+        document.write(`la suma de los 5 numeros es: ${suma}`)
+    </script>
+    -->
+    <!-- [newArray] Crear una función que reciba dos dos arrays (arreglos) como
+        argumentos y retorne el resultado en un nuevo arreglo
+        Ejemplo:
+        [1,2,3] con ["a","b","c"] debería quedar como [1,2,3,"a","b","c"]
+    
+    <script>
+        const array1 = [1, 2, 3];
+        const array2 = ["a", "b", "c"];
+        const miArray = arrayFinal(array1, array2);
+        document.write(miArray);
+    </script>
+    -->
+    <!--[SiPeroNo] Crear una función que reciba dos arrays de números y retorne un nuevo
+        array con los elementos que se encuentren en el primer array, pero no en el
+        segundo
+        Nota; Esto se llama "resta" entre conjuntos
+        Ejemplo:
+        [5,1,2,3,4] y [3,4] debería devolver [5,1,2]
+
+    
+    <script>
+        const array1 = [5, 1, 2, 3, 4];
+        const array2 = [3, 4, 5];
+        const myArray = noEstan(array1, array2);
+        document.write(myArray);
+    </script>
+-->
+    <!--[Filter] Crear una función que reciba un array de números como argumento y
+retorne un array con los elementos distintos
+Ejemplo:
+[1,2,3,4,5,4,3,2,1,0] debería retornar [1,2,3,4,5,0]
+
+    <script>
+        const array1 = [1, 2, 3, 4, 5, 4, 3, 2, 1, 0];
+        const filtrados = filtro(array1);
+        document.write(`${array1} <br>`);
+        document.write(`${filtrados}`);
+    </script>
+-->
+
+    <!-- [NoLength] Crear una función que retorne la cantidad de caracteres de un texto.
+a. Nota: Esto es posible hacerlo dentro de javascript con .length. Implementar
+un ciclo para resolver el problema.
+    <script>
+        const caracteresAcontar = "esto es una prueba de contar caracteres en un texto.";
+        let a = contarCaracteres(caracteresAcontar);
+        const objectArray = Object.entries(a);
+        objectArray.forEach(([key, value]) => {
+            key == "-" ? key = "espacio(s)" : null
+            document.write(`La cantidad de ${key} es: ${value} <br>`); // 1
+        });
+    </script>
+-->
+
+
+    <!-- [WalterWhite] Crear una función que retorne la cantidad de espacios en blanco de
+un texto
+    <script>
+        let texto = "este script cuenta los espacios en ";
+        let a = cuentaEspacios(texto);
+        document.write(`el texto : \" ${texto} \" tiene ${a} espacios en blanco <br>`)
+    </script>
+-->
+
+    <!--
+    [Capitalize] Crear una función que convierta un string “hola mundo” y retorne “Hola
+Mundo”
+    <script>
+        let texto = "hola mundo";
+        let a = primeraMayuscula(texto);
+        document.write(a);
+    </script>
+-->
+    <!-- [toArray] Crear una función que reciba un string y lo convierta en un array de
+caracteres.
+    <script>
+        let stringAconv = "esto es un string, tiene opciones de separadores : , o espacio"
+        let a = string2array(stringAconv)
+        document.write(a);
+    </script>
+-->
+    <!--
+[AlCesarLoQueEsDelCesar] Implementar una función que pueda aplicar el cifrado
+del césar. (Googlear)
+-->
+    <div class="container-lg mt-3">
+        <h1>Cifrado Cesar</h1>
+        <hr />
+        <div class="d-inline-flex p-3 bg-secondary text-white">
+            <div class="p-2 ">
+                <label for="textoAcifrar">Texto a cifrar</label>
+                <textarea class="form-control" rows="5" cols="50" id="textoAcifrar" name="text"></textarea>
+            </div>
+            <div class="p-2 ">
+                <label for="sel1">Desplazamiento</label>
+                <select class="form-control" id="sel1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
+            <div class="p-2">
+                <button type="button" class="btn btn-outline-primary text-white  mt-4 btn-block mr-3" onclick="cifradoCesar()">Cifrar</button>
+            </div>
+            <div class="p-2 ml-3">
+                <label for="textoCifrado">Texto cifrado</label>
+                <textarea class="form-control " rows="5" cols="50" id="textoCifrado" name="text" disabled></textarea>
+            </div>
+        </div>
+
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>

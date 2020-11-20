@@ -1,0 +1,25 @@
+<!--Se ingresan por teclado 4 números, si todos los valores ingresados son menores a 23, imprimir en la página ‘Todos los números son menores al número establecido. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Movie</title>
+</head>
+
+<body>
+    <script>
+        const num1 = parseFloat(prompt("ingresar 1er nro"));
+        const num2 = parseFloat(prompt("ingresar 2do nro"));
+        const num3 = parseFloat(prompt("ingresar 3ro nro"));
+        const num4 = parseFloat(prompt("ingresar 4to nro"));
+
+        if ((num1 < 23.0) && (num2 < 23.0) && (num3 < 23.0) && (num4 < 23.0)) {
+            document.write("Todos los números son menores al número establecido.");
+        }
+    </script>
+</body>
+
+</html>

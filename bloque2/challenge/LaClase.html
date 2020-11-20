@@ -1,0 +1,145 @@
+<!--
+    Confeccionar un script que permita a un usuario ingresar nombre de alumno y notas en distintos vectores (condición de finalización → alumno = “”). Al finalizar la carga se pide:
+a.	 Cantidad de alumnos cargados
+b.	Cantidad de alumnos aprobados (nota >=6)
+c.	Cantidad de alumnos promocionados (nota >=7)
+d.	Alumno/s con mayor nota (si son muchos mostrarlos todos)
+e.	Alumno/s con menor nota
+f.	Media de aprobados (Promedio de todos los alumnos aprobados)
+g.	Media de desaprobados (Promedio de todos los alumnos desaprobados)
+h.	Ordenar y mostrar los nombres de los alumnos por orden alfabético
+i.	Cantidad de notas pares y cantidad de notas impares.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHallenge LaClase</title>
+</head>
+
+<body>
+    <script>
+        const arrayAlumnos = [];
+        const arrayNotas = [];
+        inDefault = "";
+        let notaAux = 0; // variable temporarl para convertir la nota en flotante.
+        let aprobados = 0; //cuenta la cantidad de alumnos que sacaron 6 o mas.
+        let sumAprobados = 0; // suma las notas de los aprobados
+        let promAprobados = 0; // promedio de nota de los alumnos aprobados.
+        let desAprobados = 0; // cuenta la cantidad de alumnos que sacaron menos de 6.
+        let sumDesAprobados = 0; // suma las notas de los desaprobados.
+        let promDesAprobados = 0; // promedio de notas de los desaprobados.
+        let cantProm = 0; //cuenta cantidad de promocionados.
+        let j = 0; // indice del array alumnos Mas Alta
+        let cuentaMayor = 0; //cuenta cantidad de la nota mas alta
+        let alumnosMasAlta = []; //guarda en array los nombres de los alumnos con la nota mas alta
+        let cuentaMenor = 0; // cuenta la cantidad de alumnos con nota menor a 6
+        let alumnosMenor = []; // guarda en array los nombres de los alumnos que obtuvieron la nota mas    baja
+        let k = 0; // indice para el array con el nombre de los alumnos con nota mas baja
+        let notaPar = 0; // cantidad de notas pares.
+        let notaImpar = 0; // cantidad de notas impares
+
+        while (true) {
+            const nombreAlumno = prompt("Ingrese nombre del Alumno o ningun caracter para salir ", inDefault);
+            if (nombreAlumno === "") {
+                break;
+            } else if (nombreAlumno) {
+                const notaAlumno = parseFloat(prompt("ingrese nota del alumno"));
+                arrayAlumnos.push(nombreAlumno);
+                arrayNotas.push(notaAlumno);
+            } else {
+                break;
+            }
+
+        };
+        // cantidad de alumnos cargados esta en la impresion directamente.
+
+        // cantidad de alumnos aprobados >= 6 y suma de sus notas, cantidad de desaprobados y la suma de las notas
+        for (let i = 0; i < arrayNotas.length; i++) {
+            //notaAux = parseFloat(arrayNotas[i]);
+            if (arrayNotas[i] >= 6.00 && arrayNotas[i] < 7.00) {
+                aprobados = aprobados + 1;
+                sumAprobados = sumAprobados + arrayNotas[i];
+            } else if (arrayNotas[i] >= 7.00) {
+                cantProm += 1;
+            } else {
+                desAprobados += 1;
+                sumDesAprobados = sumDesAprobados + arrayNotas[i];
+            }
+        }
+        // agregar cuando no haya aprobados o desaprobados.
+        if (sumAprobados > 0) {
+            promAprobados = (sumAprobados / aprobados).toFixed(2); // redondeo a 2 decimales
+        } else {
+            promAprobados = "no hubo aprobados";
+        }
+        if (sumDesAprobados > 0) {
+            promDesAprobados = (sumDesAprobados / desAprobados).toFixed(2); // redondeo a 2 decimales
+        } else {
+            promDesAprobados = "no hubo desaprobados";
+        }
+
+        // Alumnos con mayor nota.
+        //let mayorNota = Math.max(...arrayNotas);
+        // saca la mayor nota del array
+        let mayorNota = arrayNotas[0];
+        for (let i = 0; i < arrayNotas.length; i++) {
+            if (mayorNota < arrayNotas[i]) {
+                mayorNota = arrayNotas[i];
+            }
+        }
+        // saca cuantas notas mas altas hay.
+        for (let i = 0; i < arrayNotas.length; i++) {
+            if (arrayNotas[i] == mayorNota) {
+                cuentaMayor = cuentaMayor + 1;
+                alumnosMasAlta[j] = arrayAlumnos[i]; // almacena en un array el o los alumnos con la nota mas alta.
+                j = j + 1;
+            }
+        }
+        // saca la menor nota del array
+        let menorNota = arrayNotas[0];
+        for (let i = 0; i < arrayNotas.length; i++) {
+            if (arrayNotas[i] < menorNota) {
+                menorNota = arrayNotas[i];
+            }
+        }
+        // obtiene  la cantidad de la menor nota y almacena en array los nombres de los alumnos con menor nota
+        for (let i = 0; i < arrayNotas.length; i++) {
+            if (arrayNotas[i] == menorNota) {
+                cuentaMenor += 1;
+                alumnosMenor[k] = arrayAlumnos[i];
+                k += 1;
+            }
+        }
+        // Saca la cantidad de notas pares e impares.
+        for (let i = 0; i < arrayNotas.length; i++) {
+            let aux = arrayNotas[i] % 2;
+            if (aux == 0) {
+                notaPar += 1;
+            } else {
+                notaImpar += 1;
+            }
+        }
+
+        // imprime en pantalla los datos solicitados
+        if (arrayAlumnos.length > 0) {
+            document.write(`la cantidad de alumnos cargados es: ${arrayAlumnos.length} <br>`);
+            document.write(`la cantidad de alumnos aprobados: ${aprobados} <br>`);
+            document.write(`la cantidad de alumnos promocionados: ${cantProm} <br>`);
+            document.write(`hay ${cuentaMayor} alumno(s) con la nota mas alta que es ${mayorNota} <br>`);
+            document.write(`los alumnos con la nota mas alta es/son: ${alumnosMasAlta} <br>`);
+            document.write(`hay ${cuentaMenor} alumno(s) con la nota mas baja que es ${menorNota} <br>`);
+            document.write(`los alumnos con la nota mas baja es/son: ${alumnosMenor} <br>`);
+            document.write(`la nota promedio de los alumnos aprobados es: ${promAprobados} <br>`);
+            document.write(`La nota promedio de los alumnos desaprobados es:${promDesAprobados}  <br>`);
+            document.write(`la lista de los alumnos en orden alfabetico es : <br> ${arrayAlumnos.sort()} <br>`);
+            document.write(`la cantidad de notas pares es: ${notaPar} y la cantidad de notas impares es: ${notaImpar} <br>`);
+        } else {
+            document.write(" No se cargo ningun alumno.");
+        }
+    </script>
+</body>
+
+</html>

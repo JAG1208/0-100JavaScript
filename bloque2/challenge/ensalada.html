@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Escribir un script en el cual se ingresen 6 números enteros. Con estos se debe
+ calcular la  suma de los 3 primeros y el producto entre el tercero, el cuarto y el 5to y
+ sumarle el sexto
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const num1 = parseInt(prompt("ingresar 1er numero"));
+        const num2 = parseInt(prompt("ingresar 2do numero"));
+        const num3 = parseInt(prompt("ingresar 3er numero"));
+        const num4 = parseInt(prompt("ingresar 4to numero"));
+        const num5 = parseInt(prompt("ingresar 5to numero"));
+        const num6 = parseInt(prompt("ingresar 6to numero"));
+        const suma = num1 + num2 + num3;
+        const ultimo = (num3 * num4 * num5) + num6;
+        document.write(`la suma del 1ro al 3ro es: ${suma} y el producto y suma: ${ultimo}`);
+    </script>
+</body>
+
+</html>

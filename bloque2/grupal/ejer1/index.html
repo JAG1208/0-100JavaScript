@@ -1,0 +1,54 @@
+<!--Crear un programa que le permita al usuario ingresar 3 números y muestre en
+pantalla y en consola el mayor.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLase2-1</title>
+</head>
+
+<body>
+    <h2>Ingrese 3 numeros</h2>
+    <label for="num1"> Numero 1</label>
+    <input type="text" name="num1" id="num1">
+    <br> <br>
+    <label for="num2"> Numero 2</label>
+    <input type="text" name="num2" id="num2">
+    <br> <br>
+    <label for="num3"> Numero 3</label>
+    <input type="text" name="num3" id="num3">
+    <br> <br>
+    <button type="submit" onclick="mayornum();"> Submit</button>
+    <br> <br>
+
+
+    <p id="resultado"></p>
+
+
+
+    <script>
+        function mayornum() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var num3 = parseFloat(document.getElementById("num3").value);
+            var resultado = 0
+            if ((num1 > num2) && (num1 > num3)) {
+                console.log("el numero mayor es el num1 " + num1);
+                resultado = num1;
+            } else if ((num2 > num1) && (num2 > num3)) {
+                console.log("el num2 es mayor " + num2);
+                resultado = num2;
+            } else {
+                console.log("el mayor es num3 " + num3);
+                resultado = num3;
+            }
+            console.log(resultado);
+            document.getElementById('resultado').innerHTML = "el mayor es " + resultado;
+        }
+    </script>
+</body>
+
+</html>
