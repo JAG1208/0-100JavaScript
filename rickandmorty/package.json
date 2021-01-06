@@ -1,0 +1,18 @@
+{
+  "name": "rickandmorty",
+  "version": "1.0.0",
+  "description": "Proyecto para consumir API de Rick & Mort",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Rick",
+    "and",
+    "morty",
+    "API",
+    "Javascript"
+  ],
+  "author": "Franco Di Leo",
+  "license": "MIT"
+}
